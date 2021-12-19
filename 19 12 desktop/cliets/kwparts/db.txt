@@ -1,0 +1,4 @@
+2 
+Веб сервис favorit-auto.ru
+[{"name":"key","type":"text","caption":"KEY"},{"type":"checkbox", "name":"own", "caption":"Только товары на складе"},{"name":"color","type":"color","caption":"Цвет"},{"name":"probability","type":"text","caption":"Вероятность поставки, %"}]
+favorit_auto

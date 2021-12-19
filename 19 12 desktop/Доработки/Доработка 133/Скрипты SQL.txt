@@ -1,0 +1,46 @@
+----------------------------------------------------Скрипты SQL--------------------------------------------------------------------------------
+1. 
+`social`
+CREATE TABLE `social` (
+ `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id социальной сети.',
+ `social_name` text NOT NULL COMMENT 'Название социальной сети.',
+ `social_caption` text NOT NULL,
+ `social_img_url` text NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+//Заполнение данными (пока только ВК)
+INSERT INTO `social`(`social_name`, `social_caption`, `social_img_url`) VALUES ("vk.com","ВКонтакте","/content/users/social/icons/vk.png");
+
+
+2. 
+CREATE TABLE `social_options` (
+ `id_social` int(11) NOT NULL COMMENT 'Id соц сети из таблицы social',
+ `client_id` int(11) NOT NULL COMMENT 'Id приложения из личного кабинета социальной сети.',
+ `uri_redirect` text NOT NULL COMMENT 'URL адрес скрипта-обработчика.',
+ `secret_code` text NOT NULL COMMENT 'Секретный код приложения.',
+ PRIMARY KEY (`id_social`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+Тут вставляются настройки каждого сайта отдельно, взятые и соответствующей соц сети
+
+
+3. social_user_data - таблица записей о пользователях и их соц сетях.
+
+CREATE TABLE `social_user_data` (
+ `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id записи.',
+ `social_user_id` int(11) DEFAULT NULL COMMENT 'Id пользователя в соц сети.',
+ `user_id` int(11) NOT NULL COMMENT 'Id пользователя в таблице users.',
+ `token` varchar(255) NOT NULL COMMENT 'Токен, необходимый для получения данных из соц сети.',
+ `social_id` int(11) NOT NULL COMMENT 'Id соц сети из таблицы social.',
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+
+
+4. флаг social в таблице users (нужне для упрощения сортировки)
+ALTER TABLE `users` ADD `social` INT(1) NOT NULL DEFAULT '0' COMMENT 'Если есть хоть одна привязанная соц сеть, то 1, иначе - 0.' AFTER `email_code_send_lock_expired`; 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE `social_options` CHANGE `client_id` `client_id` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'Id приложения из личного кабинета социальной сети.';
+ALTER TABLE `social_user_data` CHANGE `social_user_id` `social_user_id` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Id пользователя в соц сети.';  

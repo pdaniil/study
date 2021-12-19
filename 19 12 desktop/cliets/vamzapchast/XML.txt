@@ -1,0 +1,18 @@
+SimpleXMLElement Object
+(
+    [@attributes] => Array
+        (
+            [type] => ok
+            [pricecol] => Opt3
+        )
+
+    [apikey] => f75efb5a-06df-44a5-86f7-8f718c19b56a
+    [targets] => SimpleXMLElement Object
+        (
+        )
+
+    [analogs] => SimpleXMLElement Object
+        (
+        )
+
+)

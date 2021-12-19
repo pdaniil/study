@@ -1,0 +1,5 @@
+1 этап : создать колонку в таблице продуктов scr_video и настроить отображение на сайте.
+2 этап : сделать возможным через ПУ редактировать src_video.
+3 этап : сделать парсинг scr_video в Перенос данных: импортс из CSV в каталог товаров.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DnqdK24hrmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

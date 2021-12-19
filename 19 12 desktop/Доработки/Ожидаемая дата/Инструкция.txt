@@ -1,0 +1,28 @@
+1. Добавляем функцию в config.php
+2. Добавляем новое свойство для товара в ajax_getProductsOfBunch.php
+
+//Получаем ожидаему дату
+$this->Products[$i]["expected_date"] = $DP_Config->getDateByTimeToExe($this->Products[$i]["time_to_exe"]);
+//Получаем гарантированную дату
+$this->Products[$i]["garant_date"] = $DP_Config->getDateByTimeToExe($this->Products[$i]["time_to_exe_guaranteed"]);
+
+3. part_search_page_1.php function getProductRecordHTML, меняем значение time_to_exe
+4. cart.php Добавляем вывод expected_date и garant_date
+
+        cart_html += "<div class=\"product_div_time\" title=\"Гарантированная дата выдачи: " + garant_date + "\">";
+            cart_html += cart_records[i].expected_date ? cart_records[i].expected_date : cart_records[i].time_to_exe;
+        cart_html += "</div>";
+
+        $t2_product_json = json_decode($cart_record["t2_product_json"], true);
+
+        $cart_object["expected_date"] = $t2_product_json["expected_date"];
+        $cart_object["garant_date"] = $t2_product_json["garant_date"];
+
+
+6. ajax_checkout_create.php добавить t2_product_json
+7. my_order.php
+Добавить в таблицу Ожидаемую дату
+		$t2_product_json = json_decode($order_item["t2_product_json"],true);
+		$item_expected_date = $t2_product_json["expected_date"] ? $t2_product_json["expected_date"] : $item_t2_time_to_exe;
+		$item_garant_date = $t2_product_json["garant_date"] ? $t2_product_json["garant_date"] : $item_t2_time_to_exe_guaranteed;
+

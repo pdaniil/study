@@ -1,0 +1,2 @@
+{"login":"avtomagickr","password":"1h6a2d2c","token":"caaab546-9dda-43d1-becf-f36259e99150","color":"#000000","probability":"95","ref":"MGK","plevelid":"3418","routeid":"28","tarifid":"80","ptypeid":"1","currencyid":"1","depotid":"-1","markups":[0],"office_id":"1","storage_id":"51","additional_time":"0","office_caption":"Avtomagic","storage_caption":"","rate":"1","group_id":"2"}
+C110
