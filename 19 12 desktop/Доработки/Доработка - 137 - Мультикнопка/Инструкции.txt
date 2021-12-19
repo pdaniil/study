@@ -1,0 +1,18 @@
+1.  Добавить в БД таблицу multibutton.sql
+
+2. Создать материал
+Редактировать Бэкенд
+title Кнопка обратной связи
+alias multiknopka
+path /<backend_dir>/content/shop/multibutton/multibutton.php
+
+
+2.1 Добавить в ПУ кнопку Виджеты
+INSERT INTO `abcms_shop`.`control_items` (`id`, `items_group`, `caption`, `url`, `img`, `order`, `css_class`, `css_color`) VALUES (NULL, '6', 'Виджеты', '/<backend>/shop/multiknopka', 'modules.png', '900', '', '');
+
+3. Скопировать папку cp/multibutton в cp/content/shop/
+
+4. Скопировать папку modules/multibutton в modules/shop/
+
+5. В desktop.php подключить виджет 
+require_once($_SERVER["DOCUMENT_ROOT"]."/modules/shop/multibutton/multi_button.php");

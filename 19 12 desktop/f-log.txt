@@ -1,0 +1,95 @@
+T4s0581a9ZB72k3d6O7
+
+Доработку внесли, можете протестировать.
+Только не забудьте обновить кэш (ctrl + F5)
+
+/*
+$f = fopen('log.txt','w');
+fwrite($f, $_POST["storage_options"]."\n");
+fwrite($f, $_POST["article"]."\n");
+fclose($f);
+
+$_POST["storage_options"] = '';
+$_POST["article"] = '';
+*/
+/*
+$f = fopen('log_sup.txt','w');
+fwrite($f, $_POST["storage_options"]."\n");
+fwrite($f, $_POST["article"]."\n");
+fwrite($f, $_POST["manufacturers"]."\n");
+fclose($f);
+
+$_POST["storage_options"] = '';
+$_POST["article"] = '';
+$_POST["manufacturers"] = '';
+*/
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_value docref_root 1
+php_value docref_ext 1
+
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+
+
+		/*ob_start();
+		echo "<pre>";
+		print_r($answer);
+		echo "</pre>";
+		$page = ob_get_contents();
+		ob_end_clean();
+
+		$fw = fopen("result.txt", "w");
+
+		fwrite($fw, $page."\n\n");
+
+		fclose($fw);
+		*/
+
+ajax log
+
+start_time: new Date().getTime(),
+console.log('This request took '+(new Date().getTime() - this.start_time)+' ms');
+
+Переустановка
+Здравствуйте.
+Есть два варианта:
+1. Мы просто удаляем всю старую информацию и старую платформу со всеми доработками, после чего загружаем новую версию платформы. (5000р)
+2. На тестовый домен устанавливаем новую версию, потом туда переносим необходимые данные с необходимыми доработками (доработки нужно будет оплачивать заново)(8000р + доплата за то, что необходимо перенести).
+
+
+PDO
+
+	require_once($_SERVER["DOCUMENT_ROOT"]."/config.php");
+//Соединение с основной БД
+$DP_Config = new DP_Config;//Конфигурация CMS
+
+//Подключение к БД
+try
+{
+	$db_link = new PDO('mysql:host='.$DP_Config->host.';dbname='.$DP_Config->db, $DP_Config->user, $DP_Config->password);
+}
+catch (PDOException $e) 
+{
+    exit("No DB connect");
+}
+$db_link->query("SET NAMES utf8;");
+
+$SQL_select = "SELECT `how_get_json` FROM `shop_orders`";
+$query = $db_link->prepare($SQL_select);
+$query->execute();
+$result = $query->fetch();
+$exp = json_decode($result["how_get_json"]);
+var_dump();
+print_r($exp->mode);
+
+
+Каталоги которые часто подключаем:
+neoriginal.ru
+acat.online
+levam
+catalogs-parts.com
+parts-catalogs.com
+laximo
+avtocat.ru

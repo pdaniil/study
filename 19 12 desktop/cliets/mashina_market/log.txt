@@ -1,0 +1,2 @@
+{"login":"mashinamarket@yandex.ru","password":"UUs-tXN-bpK-bzs","access-token":"T4oMUY5VUe3kvabP","city":"krasnoyarsk","color":"#2ba63f","probability":"","office_id":"1","storage_id":"17"}
+C110
